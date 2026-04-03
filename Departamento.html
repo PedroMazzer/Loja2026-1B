@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Departamentos</title>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                margin: 0;
+                background-color: #16213e;
+                font-family: Arial, sans-serif;
+                padding: 10px;
+            }
+            .titulo {
+                color: #e94560;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            .dept-btn {
+                display: block;
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 10px;
+                background-color: #1a1a2e;
+                color: #ffffff;
+                border: 2px solid #e94560;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+            }
+            .dept-btn:hover {
+                background-color: #e94560;
+            }
+            .usuario {
+                margin-top: 30px;
+                color: #aaaaaa;
+                font-size: 13px;
+                text-align: center;
+                border-top: 1px solid #e94560;
+                padding-top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="titulo">Departamentos</div> 
+
+        <a class="dept-btn" href="ProdutosServlet?dept=Camisetas" target="principal">👕 Camisetas</a>
+        <a class="dept-btn" href="ProdutosServlet?dept=Calcas" target="principal">👖 Calças</a>
+        <a class="dept-btn" href="ProdutosServlet?dept=Blusas" target="principal">🧥 Blusas</a>
+
+        <div class="usuario" id="nomeUsuario">
+             Você não está logado
+        </div>
+    </body>
+</html>
