@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blusas</title>
+        <meta charset="UTF-8">
+        <style>
+            /* Reset básico do body - remove margens padrão do navegador */
+            body {
+                margin: 0;
+                background-color: #f0f0f0;
+                font-family: Arial, sans-serif;
+                padding: 15px;
+            }
+
+            /* Título da página com linha embaixo na cor da loja */
+            h2 {
+                color: #1a1a2e;
+                border-bottom: 2px solid #e94560;
+                padding-bottom: 8px;
+            }
+
+            /* Grade de 3 colunas para os produtos */
+            .grade {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+
+            /* Card de cada produto */
+            .produto {
+                background-color: #ffffff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 15px;
+                text-align: center;
+            }
+
+            /* Imagem do produto em tamanho reduzido */
+            .produto img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            /* Nome do produto */
+            .produto h3 {
+                font-size: 14px;
+                margin: 10px 0 5px;
+                color: #1a1a2e;
+            }
+
+            /* Descrição do produto */
+            .produto p {
+                font-size: 12px;
+                color: #666;
+                margin: 0 0 5px;
+            }
+
+            /* Preço em destaque na cor da loja */
+            .preco {
+                font-size: 15px;
+                font-weight: bold;
+                color: #e94560;
+                margin: 5px 0;
+            }
+
+            /* Campo de quantidade */
+            .qtd {
+                width: 50px;
+                text-align: center;
+                padding: 3px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 13px;
+            }
+
+            /* Botão comprar */
+            .btn-comprar {
+                display: block;
+                width: 100%;
+                margin-top: 8px;
+                padding: 7px;
+                background-color: #e94560;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 13px;
+                cursor: pointer;
+            }
+
+            /* Efeito hover no botão - escurece ao passar o mouse */
+            .btn-comprar:hover {
+                background-color: #c73652;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Blusas</h2>
+
+        <!-- Grade com os 6 produtos em 3 colunas -->
+        <div class="grade">
+
+            <!-- Produto 1 -->
+            <div class="produto">
+                <!-- Imagem placeholder - substitua pelo caminho da imagem real -->
+                <img src="https://placehold.co/100x100?text=Blusa+1">
+                <h3>Blusa de Frio</h3>
+                <!-- Descrição curta do produto -->
+                <p>Quentinha para o inverno</p>
+                <div class="preco">R$ 89,90</div>
+                <!-- Campo de quantidade, valor inicial 1, não aceita menor que 1 -->
+                <input class="qtd" type="number" value="1" min="1">
+                <!-- Ao clicar chama a função comprar passando nome, preço e o próprio botão -->
+                <button class="btn-comprar" onclick="comprar('Blusa de Frio', 89.90, this)">Comprar</button>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="produto">
+                <img src="https://placehold.co/100x100?text=Blusa+2">
+                <h3>Blusa Cropped</h3>
+                <p>Estilo moderno e despojado</p>
+                <div class="preco">R$ 59,90</div>
+                <input class="qtd" type="number" value="1" min="1">
+                <button class="btn-comprar" onclick="comprar('Blusa Cropped', 59.90, this)">Comprar</button>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="produto">
+                <img src="https://placehold.co/100x100?text=Blusa+3">
+                <h3>Blusa Manga Longa</h3>
+                <p>Conforto para dias frios</p>
+                <div class="preco">R$ 69,90</div>
+                <input class="qtd" type="number" value="1" min="1">
+                <button class="btn-comprar" onclick="comprar('Blusa Manga Longa', 69.90, this)">Comprar</button>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="produto">
+                <img src="https://placehold.co/100x100?text=Blusa+4">
+                <h3>Blusa Estampada</h3>
+                <p>Estampas exclusivas</p>
+                <div class="preco">R$ 74,90</div>
+                <input class="qtd" type="number" value="1" min="1">
+                <button class="btn-comprar" onclick="comprar('Blusa Estampada', 74.90, this)">Comprar</button>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="produto">
+                <img src="https://placehold.co/100x100?text=Blusa+5">
+                <h3>Blusa Regata</h3>
+                <p>Leve para dias quentes</p>
+                <div class="preco">R$ 44,90</div>
+                <input class="qtd" type="number" value="1" min="1">
+                <button class="btn-comprar" onclick="comprar('Blusa Regata', 44.90, this)">Comprar</button>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="produto">
+                <img src="https://placehold.co/100x100?text=Blusa+6">
+                <h3>Blusa Moletom</h3>
+                <p>Macia e confortável</p>
+                <div class="preco">R$ 79,90</div>
+                <input class="qtd" type="number" value="1" min="1">
+                <button class="btn-comprar" onclick="comprar('Blusa Moletom', 79.90, this)">Comprar</button>
+            </div>
+
+        </div>
+
+        <script>
+            // Função chamada ao clicar em "Comprar"
+            // Recebe o nome do produto, preço e o botão clicado
+            function comprar(nome, preco, btn) {
+
+                // Pega o campo de quantidade que está antes do botão
+                var qtd = parseInt(btn.previousElementSibling.value);
+
+                // Valida se a quantidade é maior que zero
+                if (qtd <= 0 || isNaN(qtd)) {
+                    alert("Quantidade inválida!");
+                    return;
+                }
+
+                // Redireciona para o CarrinhoServlet passando os dados do produto
+                // window.top garante que a página inteira muda, não só o iframe
+                window.top.location.href = "CarrinhoServlet?acao=adicionar&nome="
+                    + encodeURIComponent(nome)
+                    + "&preco=" + preco
+                    + "&qtd=" + qtd;
+            }
+        </script>
+    </body>
+</html>
