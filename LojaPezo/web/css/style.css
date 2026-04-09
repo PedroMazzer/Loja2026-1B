@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+}
+
+.topo {
+    margin: 0;
+}
+
+.barra {
+    background: #dddddd;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barra a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.formulario {
+    width: 300px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.formulario input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.formulario button {
+    width: 100%;
+    padding: 10px;
+}
+
+.item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
